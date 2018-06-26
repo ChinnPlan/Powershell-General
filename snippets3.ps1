@@ -1,4 +1,8 @@
-﻿	ForEach ($scan in $scans)
+# Get filtered file list and export to csv
+Get-ChildItem -Recurse -Path E:\Box* -Include V*.pdf | Select Name, FullName | Sort-Object FullName | Export-Csv -NoTypeInformation c:\scripts\BoxA.csv -Delimiter ","
+
+
+ForEach ($scan in $scans)
        	{
 
         $docketFile = New-Object PSObject -Property @{
